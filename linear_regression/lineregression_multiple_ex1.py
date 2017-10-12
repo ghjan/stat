@@ -15,7 +15,7 @@ import seaborn as sns  # 要注意的是一旦导入了seaborn，matplotlib的�
 
 
 def draw_dist():
-    births = pd.read_csv('births.csv')
+    births = pd.read_csv('../datasets/beijing.csv')
     # 对上表的prglngth列做一个直方图
 
     # % matplotlib inline  # 为了在jupyter notebook里作图，需要用到这个命令
