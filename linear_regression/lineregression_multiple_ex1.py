@@ -9,14 +9,17 @@ http://blog.csdn.net/lulei1217/article/details/49386295
 '''
 from sklearn import linear_model
 import pandas as pd
+import matplotlib.pyplot as plt
 
-# Function to get data
-def get_data(file_name):
-    data = pd.read_csv(file_name, encoding='utf-8')
-    X = []
-    Y = []
-    for time, city in zip(data['year'], data['beijing']):
-        X.append([float(time)])
-        Y.append(float(city))
-    return X, Y
+import seaborn as sns  # 要注意的是一旦导入了seaborn，matplotlib的默认作图风格就会被覆盖成seaborn的格式
 
+
+def draw_dist():
+    births = pd.read_csv('births.csv')
+    # 对上表的prglngth列做一个直方图
+
+    # % matplotlib inline  # 为了在jupyter notebook里作图，需要用到这个命令
+
+    sns.distplot(births['prglngth'])
+
+    sns.plt.show()
